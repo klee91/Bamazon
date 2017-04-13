@@ -1,0 +1,33 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "A mock 'Amazon' online store inventory, integrated as a Node CLI application.",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "inquirer": "^3.0.6",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "\"\\\"echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1\\\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klee91/Bamazon.git"
+  },
+  "keywords": [
+    "amazon",
+    "bamazon",
+    "store",
+    "customer",
+    "supervisor",
+    "manager"
+  ],
+  "author": "Kevin S. Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klee91/Bamazon/issues"
+  },
+  "homepage": "https://github.com/klee91/Bamazon#readme"
+}
