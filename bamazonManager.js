@@ -31,6 +31,7 @@ function listAll() {
 			console.log("QUANTITY: " + res[i].stock_quantity);
 			console.log("-------------------------------------------------------");
 		};
+		connection.end();
 	});
 };
 
@@ -49,6 +50,7 @@ function lowInventory() {
 				console.log("-------------------------------------------------------");
 			}
 		};
+		connection.end();
 	});
 }
 
@@ -111,32 +113,13 @@ function addProduct() {
 		name: "quantity",
 		message: "Enter the quantity amount in current inventory:"
 	}
-	//, {
-	// 	message: "Validating..",
-	// 	name: "quantity_validate",
-	// 	validate: function(quantity) {
-	// 	    // Declare function as asynchronous, and save the done callback 
-	// 	    var done = this.async();
-		 
-	// 	    // Do async stuff 
-	// 	    setTimeout(function () {
-	// 	      if (typeof quantity !== 'number') {
-	// 	        // Pass the return value in the done callback 
-	// 	        done('You need to provide a number');
-	// 	        return;
-	// 	      }
-	// 	      // Pass the return value in the done callback 
-	// 	      done(null, true);
-	// 	    }, 1000);
- //  		}
- //  	}
 	]).then(function(answer) {
 		var a = answer.product;
 		var b = answer.department;
 		var c = answer.price;
 		var d = answer.quantity;
 			//will add to inventory quantity for specific item
-			connection.query("INSERT products VALUES (item_id,?,?,?,?)",[a,b,c,d], function(err,res) {
+			connection.query("INSERT products VALUES (item_id,?,?,?,?,0)",[a,b,c,d], function(err,res) {
 				if (err) {console.log(err)};
 				console.log("NEW PRODUCT ADDED");
 				

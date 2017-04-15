@@ -58,7 +58,7 @@ function createDepart() {
 		var b = answer.department_name;
 		
 		//will add to inventory quantity for specific item
-		connection.query("INSERT departments VALUES (department_id,?,?,?)",[a,b,0.00], function(err,res) {
+		connection.query("INSERT departments VALUES (department_id,?,?,0)",[b,a], function(err,res) {
 			if (err) {console.log(err)};
 			console.log("NEW DEPARTMENT ADDED");
 			
